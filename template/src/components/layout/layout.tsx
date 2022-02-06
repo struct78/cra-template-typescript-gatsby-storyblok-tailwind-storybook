@@ -4,8 +4,6 @@ import tw from "twin.macro"
 import { useStaticQuery, graphql } from 'gatsby'
 import { Global } from "@emotion/core"
 import { GlobalStyles } from '../../styles/global-styles'
-import StoryblokService from '../../api/storyblok'
-
 import { Footer } from '../footer/footer'
 import { Header } from '../header/header'
 import { StoryProvider } from '@storyofams/storyblok-toolkit'
@@ -30,21 +28,6 @@ export const Layout: React.FC = ({ children }) => {
 
   return (
     <StoryProvider>
-      <Helmet
-        title={data.title}
-        script={[
-          {"src": `//app.storyblok.com/f/storyblok-latest.js?t=${StoryblokService.token}`,
-          "type": "text/javascript"}
-        ]}
-      />
-      <Helmet
-        script={[
-          {
-          "innerHTML": `var StoryblokCacheVersion = '${StoryblokService.getCacheVersion()}';`,
-          "type": "text/javascript"
-          }
-        ]}
-      />
       <Container>
         <Global styles={GlobalStyles} />
         <Header />

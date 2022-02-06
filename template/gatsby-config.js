@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 const siteTitle = 'cra-template-typescript-gatsby-storyblok-netlify-styled-components-storybook'
 const siteDescription = 'Welcome'
 const siteAuthor = ''
@@ -36,7 +40,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-storyblok',
       options: {
-        accessToken: '09XA5SfbTvfCNsMZSUGrqwtt',
+        accessToken: process.env.STORYBLOK_TOKEN,
         homeSlug: 'home',
         version: 'draft'
       }
