@@ -8,4 +8,7 @@ export const GlobalStyles = css`
     ${tw`text-white bg-black`}
     font-family: Arial;
   }
+  a {
+    text-white
+  }
 `
