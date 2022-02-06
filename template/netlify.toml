@@ -1,7 +1,7 @@
 [[plugins]]
-  [plugins.value]
+  [plugins.lighthouse]
   package = "netlify-plugin-lighthouse"
-  [plugins.value]
+  [plugins.critical]
   package = "netlify-plugin-inline-critical-css"
-  [plugins.value]
+  [plugins.a11y]
   package = "netlify-plugin-a11y"
