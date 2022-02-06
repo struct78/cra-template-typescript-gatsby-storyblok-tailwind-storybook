@@ -1,6 +1,6 @@
 {
   "name": "cra-template-typescript-gatsby-storyblok-tailwind-storybook",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "keywords": [
     "react",
     "create-react-app",
@@ -25,6 +25,8 @@
   },
   "files": [
     "template",
-    "template.json"
-  ]
+    "template.json",
+    "package.json"
+  ],
+  "main": "template.json"
 }
