@@ -1,4 +1,2 @@
 [[plugins]]
-package = "netlify-plugin-lighthouse"
-package = "netlify-plugin-inline-critical-css"
-package = "netlify-plugin-a11y"
+package = ["netlify-plugin-lighthouse", "netlify-plugin-inline-critical-css", "netlify-plugin-a11y"]
