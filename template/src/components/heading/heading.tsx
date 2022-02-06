@@ -6,7 +6,7 @@ import { ComponentProps } from '../../@types/components'
 export type HeadingProps = ComponentProps<any>
 
 export const Tag = tw.h1`
-  text-44
+  text-44 mb-1
 `
 
 export const Heading: FC<HeadingProps> = ({ blok }: HeadingProps) => {
