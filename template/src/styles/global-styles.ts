@@ -9,6 +9,6 @@ export const GlobalStyles = css`
     font-family: Arial;
   }
   a {
-    text-white
+    ${tw`text-white`}
   }
 `
