@@ -1,6 +1,6 @@
 {
   "name": "cra-template-typescript-gatsby-storyblok-tailwind-storybook",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "keywords": [
     "react",
     "create-react-app",
@@ -10,7 +10,7 @@
     "tailwind",
     "storybook"
   ],
-  "description": "Typescript w/ Gatsby, Netlify, Styled Components, and Storybook",
+  "description": "Typescript w/ Gatsby, Netlify, Tailwind, and Storybook",
   "repository": {
     "type": "git",
     "url": "https://github.com/struct78/cra-template-typescript-gatsby-storyblok-tailwind-storybook.git",
