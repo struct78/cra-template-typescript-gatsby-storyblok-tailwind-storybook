@@ -9,7 +9,7 @@ jobs:
         with:
           node-version: 16
       - run: mv template/.gitignore template/gitignore
-      - run: mv .gitignore/gitignore
+      - run: mv .gitignore gitignore
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
