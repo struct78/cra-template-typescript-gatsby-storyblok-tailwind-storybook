@@ -1,13 +1,13 @@
-import React, { FC } from 'react'
-import { Helmet } from 'react-helmet'
+import { FC } from 'react'
+import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-interface MetaItem {
+export type MetaItem = {
   name: string
   content: string
 }
 
-interface SEOProps {
+export type SEOProps = {
   title?: string
   description?: string
   url?: string

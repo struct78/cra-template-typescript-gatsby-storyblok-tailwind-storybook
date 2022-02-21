@@ -10,6 +10,8 @@ jobs:
           node-version: 16
       - run: mv template/.gitignore template/gitignore
       - run: mv .gitignore gitignore
+      - run: mv template/.env.example template/.env.development
+      - run: cp template/.env.development template/.env.production
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}

@@ -1,13 +1,15 @@
-import React, { FC }  from 'react'
-import { Container, ContainerProps } from '../container/container'
+import loadable from '@loadable/component'
+import { FC }  from 'react'
+import { Container } from '../container/container'
 import { Divider } from '../divider/divider'
-import { FullWidthImage } from '../full-width-image/full-width-image'
+import { Image } from '../image/image'
 import { Heading } from '../heading/heading'
 import { Placeholder } from '../placeholder/placeholder'
 import { Text } from '../text/text'
 import { ContactForm } from '../contact-form/contact-form'
-import SbEditable from 'storyblok-react'
-import { ComponentProps } from '../../@types/components'
+import { Blok } from 'storyblok-react'
+
+const SbEditable = loadable(() => import(/* webpackChunkName: "storyblok-react" */"storyblok-react"))
 
 interface RouterProps {
   blok: any
@@ -17,20 +19,19 @@ interface ComponentMap {
   [key: string]: FC<RouterProps>
 }
 
-const ContainerWrapper = ({ blok }: ComponentProps<any>) => {
-  const { children, _uid } = blok
-
+const ContainerWrapper = ({ blok }: Blok<any>) => {
+  const { children, _uid, ...rest } = blok
   return (
     <SbEditable content={blok} key={_uid}>
-      <Container>
-        {children && children.map((child: ComponentProps<any>) => <Resolver blok={child} key={child._uid} />)}
+      <Container {...rest}>
+        {children && children.map((child: Blok<any>) => <Resolver blok={child} key={child._uid} />)}
       </Container>
     </SbEditable>
   )
 }
 
 export const Components: ComponentMap = {
-  'full-width-image': FullWidthImage,
+  'image': Image,
   'container': ContainerWrapper,
   'heading': Heading,
   'text': Text,

@@ -33,6 +33,16 @@ exports.createPages = async ({ graphql, actions }) => {
         story: edge.node,
       }
     })
+
+    if (isHome) {
+      actions.createPage({
+        path: full_slug,
+        component: pageTemplate,
+        context: {
+          story: edge.node,
+        }
+      })
+    }
   })
 }
 

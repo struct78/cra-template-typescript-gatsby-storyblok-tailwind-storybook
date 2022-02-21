@@ -1,7 +1,13 @@
 /// <reference types="react/index.d.ts"/>
 /// <reference types="styled-components/cssprop" />
 
+
+import { Blok } from 'storyblok-react'
 import 'styled-components'
+
+declare module 'gatsby-storyblok-image' {
+
+}
 
 // Add support for css prop
 declare namespace React {
@@ -40,7 +46,12 @@ declare global {
   namespace NodeJS {
     export interface Global {
       ___loader: any
+      StoryblokBridge: any
     }
+  }
+
+  export type Component<T> = {
+    blok: Blok<t>
   }
   export interface BlokImage {
     filename: string

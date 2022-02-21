@@ -1,7 +1,8 @@
-import React, { FC } from 'react'
-import SbEditable from 'storyblok-react'
+import loadable from '@loadable/component'
+import { FC } from 'react'
+import { Blok } from 'storyblok-react'
 import tw from "twin.macro"
-import { ComponentProps } from '../../@types/components'
+const SbEditable = loadable(() => import(/* webpackChunkName: "storyblok-react" */"storyblok-react"))
 
 export type DividerProps = {}
 
@@ -9,7 +10,7 @@ const DividerContainer = tw.div``
 
 const Rule = tw.hr``
 
-export const Divider: FC<ComponentProps<DividerProps>> = ({ blok }: ComponentProps<DividerProps>) => {
+export const Divider: FC<Blok<DividerProps>> = ({ blok }: ComponentProps<DividerStoryblok>) => {
   const { _uid } = blok
 
   return (

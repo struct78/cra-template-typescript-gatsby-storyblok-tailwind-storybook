@@ -42,7 +42,9 @@ module.exports = {
       options: {
         accessToken: process.env.STORYBLOK_TOKEN,
         homeSlug: 'home',
-        version: 'draft'
+        version: 'draft',
+        localAssets: true,
+        resolveRelations: ["navigation.pages"],
       }
     },
     {
@@ -62,5 +64,19 @@ module.exports = {
     `gatsby-plugin-tailwindcss`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-emotion`,
+    `gatsby-plugin-loadable-components-ssr`,
+    {
+      resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
+      options: { analyzerMode: `static` },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Poppins\:400,800`,
+        ],
+        display: 'swap'
+      }
+    }
   ],
 }

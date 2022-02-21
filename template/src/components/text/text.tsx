@@ -1,21 +1,21 @@
-import React, { FC } from 'react'
-import SbEditable from 'storyblok-react'
+import loadable from '@loadable/component'
+import { FC } from 'react'
+import tw from 'twin.macro'
 import { render } from 'storyblok-rich-text-react-renderer'
-import tw from "twin.macro"
-import { ComponentProps } from '../../@types/components'
+import { TextStoryblok } from '../../@types/storyblok'
+import { Blok } from 'storyblok-react'
+const Editable = loadable(() => import(/* webpackChunkName: "storyblok-react" */ 'storyblok-react'))
 
-export type TextProps = {}
+const Container = tw.div`
+  vr-normal-16
+`
 
-const Container = tw.div``
-
-export const Text: FC<ComponentProps<TextProps>> = ({ blok }: ComponentProps<TextProps>) => {
+export const Text: FC<Blok<TextStoryblok>> = ({ blok }: Blok<TextStoryblok>) => {
   const { _uid, text } = blok
 
   return (
-    <SbEditable content={blok} key={_uid}>
-      <Container>
-        {render(text)}
-      </Container>
-    </SbEditable>
+    <Editable content={blok} key={_uid}>
+      <Container>{render(text)}</Container>
+    </Editable>
   )
 }

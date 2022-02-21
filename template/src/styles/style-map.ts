@@ -2,7 +2,7 @@ import tw from "twin.macro"
 
 export const styles = {
   width: {
-    fixed: tw`w-80`,
+    fixed: tw`m-auto max-w-100`,
     full: tw`w-full`,
   },
   justify: {
@@ -15,7 +15,7 @@ export const styles = {
     center: tw`items-center`,
     right: tw`items-end`,
   },
-  "text-align": {
+  textAlign: {
     left: tw`text-left`,
     center: tw`text-center`,
     right: tw`text-right`,
@@ -27,28 +27,28 @@ export const styles = {
     "large": tw`p-3`,
     "x-large": tw`p-4`,
   },
-  "padding-top": {
+  paddingTop: {
     "none": tw`pt-0`,
     "small": tw`pt-1`,
     "medium": tw`pt-2`,
     "large": tw`pt-3`,
     "x-large": tw`pt-4`,
   },
-  "padding-bottom": {
+  paddingBottom: {
     "none": tw`pb-0`,
     "small": tw`pb-1`,
     "medium": tw`pb-2`,
     "large": tw`pb-3`,
     "x-large": tw`pb-4`,
   },
-  "padding-right": {
+  paddingRight: {
     "none": tw`pr-0`,
     "small": tw`pr-1`,
     "medium": tw`pr-2`,
     "large": tw`pr-3`,
     "x-large": tw`pr-4`,
   },
-  "padding-left": {
+  paddingLeft: {
     "none": tw`pl-0`,
     "small": tw`pl-1`,
     "medium": tw`pl-2`,
@@ -62,28 +62,28 @@ export const styles = {
     "large": tw`m-3`,
     "x-large": tw`m-4`,
   },
-  "margin-top": {
+  marginTop: {
     "none": tw`mt-0`,
     "small": tw`mt-1`,
     "medium": tw`mt-2`,
     "large": tw`mt-3`,
     "x-large": tw`mt-4`,
   },
-  "margin-bottom": {
+  marginBottom: {
     "none": tw`mb-0`,
     "small": tw`mb-1`,
     "medium": tw`mb-2`,
     "large": tw`mb-3`,
     "x-large": tw`mb-4`,
   },
-  "margin-right": {
+  marginRight: {
     "none": tw`mr-0`,
     "small": tw`mr-1`,
     "medium": tw`mr-2`,
     "large": tw`mr-3`,
     "x-large": tw`mr-4`,
   },
-  "margin-left": {
+  marginLeft: {
     "none": tw`ml-0`,
     "small": tw`ml-1`,
     "medium": tw`ml-2`,

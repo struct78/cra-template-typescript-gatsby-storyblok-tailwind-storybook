@@ -1,10 +1,9 @@
-import React, { FC } from 'react'
-import { ComponentProps } from '../../@types/components'
+import { FC } from 'react'
 
 export type PlaceholderProps = {
   name: string
 }
 
-export const Placeholder: FC<ComponentProps<PlaceholderProps>> = ({ name }: PlaceholderProps) => (
+export const Placeholder: FC<PlaceholderProps> = ({ name }: PlaceholderProps) => (
   <p><strong>{name}</strong> has not been created yet.</p>
 )

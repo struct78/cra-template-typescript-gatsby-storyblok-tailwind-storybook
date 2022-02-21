@@ -1,31 +1,21 @@
-import React from 'react'
-import { Helmet } from 'react-helmet'
+import loadable from '@loadable/component'
+import { FC } from 'react'
 import tw from "twin.macro"
-import { useStaticQuery, graphql } from 'gatsby'
-import { Global } from "@emotion/core"
 import { GlobalStyles } from '../../styles/global-styles'
 import { Footer } from '../footer/footer'
 import { Header } from '../header/header'
-import { StoryProvider } from '@storyofams/storyblok-toolkit'
 
-const Container = tw.div`
-  max-w-100 m-auto
-`
+const Global = loadable(() => import(/* webpackChunkName: "emotion" */'@emotion/core'), {
+  resolveComponent: ({ Global }) => Global,
+})
+const StoryProvider = loadable(() => import(/* webpackChunkName: "storyblok-toolkit" */'@storyofams/storyblok-toolkit'), {
+  resolveComponent: ({ StoryProvider }) => StoryProvider,
+})
 
+const Container = tw.div``
 const Main = tw.main``
 
-export const Layout: React.FC = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-          description
-        }
-      }
-    }
-  `);
-
+export const Layout: FC = ({ children }) => {
   return (
     <StoryProvider>
       <Container>

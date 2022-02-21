@@ -4,11 +4,13 @@ import tw from "twin.macro"
 
 export const GlobalStyles = css`
   ${emotionReset}
+  * {
+    ${tw`box-border`}
+  }
   body {
-    ${tw`text-white bg-black`}
-    font-family: Arial;
+    ${tw`font-normal text-black bg-white font-text`}
   }
   a {
-    ${tw`text-white`}
+    ${tw`text-black`}
   }
 `

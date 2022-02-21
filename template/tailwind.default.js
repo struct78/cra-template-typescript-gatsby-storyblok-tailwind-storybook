@@ -1,4 +1,6 @@
 /* eslint-disable max-lines */
+const space = {}
+const negativeSpace = {}
 const base = 16
 const percentages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 const units = [
@@ -7,6 +9,7 @@ const units = [
   232, 250, 272, 280, 288, 292, 300, 320, 330, 336, 360, 376, 400, 410, 420, 430, 436, 440, 450, 456, 470, 490, 500, 592, 600, 630, 660, 700, 720,
   770, 800, 900, 1000, 1200, 1440,
 ]
+
 const screens = {
   xsm: "23.5rem",
   sm: "26rem",
@@ -15,8 +18,7 @@ const screens = {
   lg: "85.375rem",
   xl: "105rem",
 }
-const space = {}
-const negativeSpace = {}
+
 percentages.forEach(percentage => {
   for (var index = 1; index < percentage; index++) {
     const key = `${index}/${percentage}`
@@ -38,21 +40,12 @@ const spacing = {
   auto: "auto",
   none: "none",
   full: "100%",
-  double: "200%",
-  "full-vh": "100vh",
-  "6/10-vh": "60vh",
-  "6/10-vw": "60vw",
-  "7/10-vh": "70vh",
-  "8/10-vh": "80vh",
-  "8/10-vw": "80vw",
-  "full-vw": "100vw",
   ...screens,
   ...space,
 }
 
 module.exports = {
   content: ["./src/**/*.js", "./src/**/*.jsx", "./src/**/*.ts", "./src/**/*.tsx"],
-  darkMode: false,
   theme: {
     screens,
     spacing: spacing,
@@ -67,9 +60,6 @@ module.exports = {
       auto: "auto",
       none: "none",
       full: "100%",
-      "full-vh": "100vh",
-      "8/10-vh": "80vh",
-      "full-vw": "100vw",
       ...screens,
       ...space,
       ...negativeSpace,
@@ -79,8 +69,8 @@ module.exports = {
       ...negativeSpace,
     },
     fontFamily: {
-      headings: ["serif"],
-      body: ["sans-serif"],
+      heading: ["Poppins"],
+      text: ["Poppins"],
     },
     fontSize: {
       11: "0.6875rem", // 11px
@@ -109,8 +99,8 @@ module.exports = {
       loose: "0.07em",
     },
     lineHeight: {
-      1: 1,
-      1.5: 1.5,
+      tight: 1,
+      normal: 1.5,
     },
     colors: {
       "black": "#000",
@@ -121,11 +111,6 @@ module.exports = {
       landscape: [16, 9],
       "3-4": [3, 4],
       "4-3": [4, 3],
-      "4-5": [4, 5],
-      "6-5": [5, 6],
-      "7-10": [7, 10],
-      "8-9": [8, 9],
-      "9-10": [9, 10],
       "9-16": [9, 16],
     },
     transitionProperty: {
@@ -143,12 +128,6 @@ module.exports = {
       default: "ease-in-out",
       linear: "linear",
       cubic: "cubic-bezier(0.785, 0.135, 0.15, 0.86)",
-    },
-    boxShadow: {
-      none: `none`,
-      card: `0px 1px 16px rgba(84, 82, 81, 0.15)`,
-      header: `0px 4px 16px rgba(0, 0, 0, 0.04)`,
-      large: `0px 0px 30px 0px rgba(0, 0, 0, 0.25)`,
     },
     opacity: {
       0: "0",
@@ -213,4 +192,14 @@ module.exports = {
     margin: ["responsive", "first", "last"],
     padding: ["responsive", "first", "last"],
   },
+  verticalRhythm: {
+    defaultLineHeight: 'loose',
+    fontCapHeight: {
+      'default': 0.705,
+    },
+    height: 0.5 // Vertical rhythm in rems
+  },
+  plugins: [
+    require('tailwind-vertical-rhythm'),
+  ]
 }

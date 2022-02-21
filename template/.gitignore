@@ -65,3 +65,7 @@ public
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+# Storyblok
+components.*.json
+presets.*.json
