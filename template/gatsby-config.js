@@ -40,11 +40,10 @@ module.exports = {
     {
       resolve: 'gatsby-source-storyblok',
       options: {
-        accessToken: process.env.STORYBLOK_TOKEN,
+        accessToken: process.env.GATSBY_STORYBLOK_TOKEN,
         homeSlug: 'home',
         version: 'draft',
         localAssets: true,
-        resolveRelations: ["navigation.pages"],
       }
     },
     {

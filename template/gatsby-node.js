@@ -5,17 +5,16 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const { data } = await graphql(
     `query {
-      allStoryblokEntry {
+      allStoryblokEntry(filter: { field_component: { eq: "page" }}) {
         edges {
           node {
             id
+            internalId
             name
             slug
             full_slug
             content
-            field_seo_title_string
-            field_seo_description_string
-            field_open_graph_title_string
+            field_title_string
           }
         }
       }

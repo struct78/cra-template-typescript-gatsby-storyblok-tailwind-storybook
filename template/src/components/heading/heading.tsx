@@ -30,7 +30,7 @@ export const Heading: FC<Blok<HeadingStoryblok>> = ({ blok }: Blok<HeadingStoryb
 
   return (
     <SbEditable content={blok} key={_uid}>
-      <Tag as={size}>{text}</Tag>
+      <Tag as={size} size={size}>{text}</Tag>
     </SbEditable>
   )
 }

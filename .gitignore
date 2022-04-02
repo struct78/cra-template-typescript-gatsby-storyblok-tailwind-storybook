@@ -1,2 +1,5 @@
 .DS_Store
 .env.development
+*.pem
+template/componens.*.json
+template/presets.*.json

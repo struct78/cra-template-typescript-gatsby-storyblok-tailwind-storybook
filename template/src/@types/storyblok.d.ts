@@ -98,10 +98,10 @@ export interface NavigationStoryblok {
 }
 
 export interface PageStoryblok {
-  seo_title?: string;
-  seo_description?: string;
-  open_graph_title?: string;
-  open_graph_image?: {
+  openGraphDescription?: string;
+  body?: any[];
+  title?: string;
+  openGraphImage?: {
     alt?: string;
     copyright?: string;
     id: number;
@@ -109,9 +109,9 @@ export interface PageStoryblok {
     name: string;
     title?: string;
   };
-  body?: any[];
-  title?: string;
-  open_graph_description?: string;
+  openGraphTitle?: string;
+  seoDescription?: string;
+  seoTitle?: string;
   _uid: string;
   component: "page";
   uuid?: string;

@@ -1,17 +1,26 @@
+import React from 'react'
 import { Layout } from '../components/layout/layout'
 import { Page } from '../components/page/page'
 import { SEO } from '../components/seo/seo'
 import { useStoryblok } from '../hooks/useStoryblok'
 
-const PageTemplate = ({ pageContext, location }: { pageContext: any, location: Location }) => {
-  const story = JSON.parse(pageContext.story.content)
-  const liveStory = useStoryblok(story, location)
-  const { seo_title, seo_description } = liveStory
+const PageTemplate = ({ pageContext, location }: { pageContext: any; location: Location }) => {
+  const { story } = pageContext
+  const {
+    content: { seoTitle, seoDescription, openGraphImage, openGraphDescription, openGraphTitle },
+  }: Blok<PageStoryblok> = story
+  const storyLive = useStoryblok(story, location)
 
   return (
     <Layout>
-      <SEO title={seo_title} description={seo_description} />
-      <Page blok={liveStory} />
+      <SEO
+        title={seoTitle}
+        description={seoDescription}
+        openGraphTitle={openGraphTitle}
+        openGraphDescription={openGraphDescription}
+        openGraphImage={openGraphImage?.filename}
+      />
+      <Page story={storyLive} location={location} />
     </Layout>
   )
 }
